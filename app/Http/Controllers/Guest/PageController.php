@@ -10,12 +10,12 @@ class PageController extends Controller
 {
     public function index(){
         $movies = Movie::orderBy('title')->get();
-        return view('movies.index', compact('movies'));
+        return view('welcome', compact('movies'));
     }
 
 public function show($id){
 $movies = Movie::all();
 $movie = $movies->find($id);
-return view("movies.show", compact("movie"));
+return view("/welcome.show", compact("movie"));
 }
 }

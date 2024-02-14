@@ -14,4 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", [PageController::class, 'show']);
+// Route per visualizzare l'elenco dei film
+Route::get('/', [PageController::class, 'index'])->name('movies.index');
+
+// Route per visualizzare i dettagli di un singolo film
+Route::get('/{id}', [PageController::class, 'show'])->name('movies.show');
